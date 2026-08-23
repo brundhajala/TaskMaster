@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "932585813245",
+    "project_id": "taskmaster-5be25",
+    "storage_bucket": "taskmaster-5be25.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932585813245:android:e58d43607caa48972bfa94",
+        "android_client_info": {
+          "package_name": "com.example.taskmaster"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0qYFknfyK13ej05HQlpC-no6dRiwWN8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
