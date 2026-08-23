@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Internet permission for Firebase -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,12 +16,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TaskMaster">
 
+        <!-- Add Task Screen -->
         <activity
             android:name=".AddTaskActivity"
             android:exported="false" />
 
+        <!-- Main Task Screen -->
         <activity
             android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Login Screen - App starts here -->
+        <activity
+            android:name=".LoginActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
 

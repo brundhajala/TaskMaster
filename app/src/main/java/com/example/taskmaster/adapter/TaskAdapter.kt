@@ -1,5 +1,6 @@
 package com.example.taskmaster.adapter
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +26,10 @@ class TaskAdapter(
         val completed: CheckBox = itemView.findViewById(R.id.cbTaskCompleted)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): TaskViewHolder {
 
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_task, parent, false)
@@ -33,7 +37,10 @@ class TaskAdapter(
         return TaskViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
+    override fun onBindViewHolder(
+        holder: TaskViewHolder,
+        position: Int
+    ) {
 
         val task = tasks[position]
 
@@ -41,6 +48,14 @@ class TaskAdapter(
         holder.description.text = task.description
         holder.priority.text = "Priority: ${task.priority}"
         holder.dueDate.text = "Due: ${task.dueDate}"
+
+        // Set priority color
+        when (task.priority) {
+            "High" -> holder.priority.setTextColor(Color.RED)
+            "Medium" -> holder.priority.setTextColor(Color.parseColor("#FFA500")) // Orange
+            "Low" -> holder.priority.setTextColor(Color.GREEN)
+            else -> holder.priority.setTextColor(Color.BLACK)
+        }
 
         holder.completed.setOnCheckedChangeListener(null)
         holder.completed.isChecked = task.isCompleted
